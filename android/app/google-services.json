@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "139873541649",
+    "project_id": "flutter-login-2a016",
+    "storage_bucket": "flutter-login-2a016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139873541649:android:0f4bda10f7ee4bafa7dbb0",
+        "android_client_info": {
+          "package_name": "com.example.hotel_app_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139873541649-ef9pgrh3of13ip76nf60fe4ih9cuhc1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4YRM7360o2c73aO36yrtdSgYDzwTOYBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139873541649-ef9pgrh3of13ip76nf60fe4ih9cuhc1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
