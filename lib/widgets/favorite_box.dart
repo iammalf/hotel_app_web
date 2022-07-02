@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hotel_app_web/theme/color.dart';
 
 class FavoriteBox extends StatelessWidget {
-  FavoriteBox(
+  const FavoriteBox(
       {Key? key,
       this.bgColor = Colors.white,
       this.onTap,
@@ -37,7 +37,7 @@ class FavoriteBox extends StatelessWidget {
               color: shadowColor.withOpacity(0.1),
               spreadRadius: 1,
               blurRadius: 1,
-              offset: Offset(0, 0), // changes position of shadow
+              offset: const Offset(0, 0), // changes position of shadow
             ),
           ],
         ),

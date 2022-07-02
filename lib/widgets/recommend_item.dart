@@ -12,8 +12,8 @@ class RecommendItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-          margin: EdgeInsets.only(right: 10),
-          padding: EdgeInsets.all(10),
+          margin: const EdgeInsets.only(right: 10),
+          padding: const EdgeInsets.all(10),
           width: 300,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
@@ -23,7 +23,7 @@ class RecommendItem extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.1),
                 spreadRadius: 1,
                 blurRadius: 1,
-                offset: Offset(1, 1), // changes position of shadow
+                offset: const Offset(1, 1), // changes position of shadow
               ),
             ],
           ),
@@ -34,7 +34,7 @@ class RecommendItem extends StatelessWidget {
                 radius: 15,
                 height: 80,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Expanded(
@@ -45,40 +45,41 @@ class RecommendItem extends StatelessWidget {
                       data["name"],
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: textColor,
                           fontSize: 16,
                           fontWeight: FontWeight.w600),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
                       data["type"],
-                      style: TextStyle(fontSize: 12, color: labelColor),
+                      style: const TextStyle(fontSize: 12, color: labelColor),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.star,
                           size: 14,
                           color: yellow,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 3,
                         ),
                         Expanded(
                           child: Text(
                             data["rate"],
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
+                            style: const TextStyle(
+                                fontSize: 12, color: Colors.grey),
                           ),
                         ),
                         Text(
                           data["price"],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: primary,

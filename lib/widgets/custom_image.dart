@@ -42,15 +42,15 @@ class CustomImage extends StatelessWidget {
               color: shadowColor.withOpacity(0.1),
               spreadRadius: 1,
               blurRadius: 1,
-              offset: Offset(0, 1), // changes position of shadow
+              offset: const Offset(0, 1), // changes position of shadow
             ),
         ],
       ),
       child: isNetwork
           ? CachedNetworkImage(
               imageUrl: image,
-              placeholder: (context, url) => BlankImageWidget(),
-              errorWidget: (context, url, error) => BlankImageWidget(),
+              placeholder: (context, url) => const BlankImageWidget(),
+              errorWidget: (context, url, error) => const BlankImageWidget(),
               imageBuilder: (context, imageProvider) => Container(
                 decoration: BoxDecoration(
                   borderRadius: borderRadius ?? BorderRadius.circular(radius),
@@ -76,8 +76,8 @@ class BlankImageWidget extends StatefulWidget {
 class _BlankImageWidgetState extends State<BlankImageWidget> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(0),
+    return const Padding(
+      padding: EdgeInsets.all(0),
       child: Center(
           child: SizedBox(
         child: Card(

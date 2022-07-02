@@ -3,7 +3,7 @@ import 'package:hotel_app_web/screens/login_page.dart';
 import 'package:hotel_app_web/screens/register_page.dart';
 
 class AuthPage extends StatefulWidget {
-  AuthPage({Key? key}) : super(key: key);
+  const AuthPage({Key? key}) : super(key: key);
 
   @override
   State<AuthPage> createState() => _AuthPageState();

@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hotel_app_web/theme/color.dart';
 
 class NotificationBox extends StatelessWidget {
-  NotificationBox(
+  const NotificationBox(
       {Key? key, this.onTap, this.size = 5, this.notifiedNumber = 0})
       : super(key: key);
   final GestureTapCallback? onTap;
@@ -25,9 +25,9 @@ class NotificationBox extends StatelessWidget {
           child: notifiedNumber > 0
               ? Badge(
                   badgeColor: actionColor,
-                  padding: EdgeInsets.all(3),
+                  padding: const EdgeInsets.all(3),
                   position: BadgePosition.topEnd(top: -7, end: 0),
-                  badgeContent: Text(
+                  badgeContent: const Text(
                     '',
                     style: TextStyle(color: Colors.white),
                   ),

@@ -49,7 +49,7 @@ class _SettingPageState extends State<SettingPage> {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   "Configuración",
                   style: TextStyle(
@@ -61,12 +61,12 @@ class _SettingPageState extends State<SettingPage> {
             ),
           ),
           IconBox(
+            bgColor: appBgColor,
             child: SvgPicture.asset(
               "assets/icons/edit.svg",
               width: 18,
               height: 18,
             ),
-            bgColor: appBgColor,
           ),
         ],
       ),
@@ -75,11 +75,11 @@ class _SettingPageState extends State<SettingPage> {
 
   Widget buildBody() {
     return SingleChildScrollView(
-      padding: EdgeInsets.only(right: 20, top: 10),
+      padding: const EdgeInsets.only(right: 20, top: 10),
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: Column(
               children: <Widget>[
                 CustomImage(
@@ -88,10 +88,10 @@ class _SettingPageState extends State<SettingPage> {
                   height: 80,
                   radius: 50,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
-                Text(
+                const Text(
                   "Erick Garfias",
                   style: TextStyle(
                     color: textColor,
@@ -99,22 +99,22 @@ class _SettingPageState extends State<SettingPage> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Text(
+                const Text(
                   "Phone: +51 999 999 999",
                   style: TextStyle(
                     color: labelColor,
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Text(
-                  "Email: " + user.email!,
-                  style: TextStyle(
+                  "Email: ${user.email!}",
+                  style: const TextStyle(
                     color: labelColor,
                     fontSize: 14,
                   ),
@@ -122,31 +122,31 @@ class _SettingPageState extends State<SettingPage> {
               ],
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           SettingItem(
               title: "Configuración",
               leadingIcon: Icons.settings,
               leadingIconColor: orange,
               onTap: () {}),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           SettingItem(
               title: "Reservas",
               leadingIcon: Icons.bookmark_border,
               leadingIconColor: blue,
               onTap: () {}),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           SettingItem(
               title: "Favoritos",
               leadingIcon: Icons.favorite,
               leadingIconColor: red,
               onTap: () {}),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           SettingItem(
               title: "Políticas de Privacidad",
               leadingIcon: Icons.privacy_tip_outlined,
               leadingIconColor: green,
               onTap: () {}),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           SettingItem(
             title: "Salir",
             leadingIcon: Icons.logout_outlined,
@@ -155,7 +155,7 @@ class _SettingPageState extends State<SettingPage> {
               showConfirmLogout();
             },
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
         ],
       ),
     );
@@ -165,20 +165,20 @@ class _SettingPageState extends State<SettingPage> {
     showCupertinoModalPopup(
       context: context,
       builder: (context) => CupertinoActionSheet(
-        message: Text("¿Desea cerrar sesión?"),
+        message: const Text("¿Desea cerrar sesión?"),
         actions: [
           CupertinoActionSheetAction(
             onPressed: () {
               FirebaseAuth.instance.signOut();
             },
-            child: Text(
+            child: const Text(
               "Salir",
               style: TextStyle(color: actionColor),
             ),
           )
         ],
         cancelButton: CupertinoActionSheetAction(
-          child: Text("Cancelar"),
+          child: const Text("Cancelar"),
           onPressed: () {
             Navigator.of(context).pop();
           },

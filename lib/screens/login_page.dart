@@ -39,22 +39,22 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //HOLA
-                Text(
+                const Text(
                   "Bienvenido",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 36,
                   ),
                 ),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   "Inka Siza Hotel le da la Bienvenida",
                   style: TextStyle(
                     fontSize: 24,
                   ),
                 ),
 
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
 
                 //Email TextField
                 Padding(
@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 //Password TextField
                 Padding(
@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 //Boton de Inicio de Sesión
                 Padding(
@@ -120,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.deepPurple,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Ingresar",
                           style: TextStyle(
@@ -134,13 +134,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
 
                 //Registro
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "No tienes una Cuenta?",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -148,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     GestureDetector(
                       onTap: widget.showRegisterPage,
-                      child: Text(
+                      child: const Text(
                         " Registrarse Ahora",
                         style: TextStyle(
                           color: Colors.blue,

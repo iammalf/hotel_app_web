@@ -52,22 +52,22 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //HOLA
-                Text(
+                const Text(
                   "Hola a todos",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 36,
                   ),
                 ),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   "Regístrese a continuación con sus datos",
                   style: TextStyle(
                     fontSize: 24,
                   ),
                 ),
 
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
 
                 //Email TextField
                 Padding(
@@ -93,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 //Password TextField
                 Padding(
@@ -120,7 +120,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 //Repetir Password TextField
                 Padding(
@@ -147,7 +147,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 //Boton de Inicio de Sesión
                 Padding(
@@ -160,7 +160,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         color: Colors.deepPurple,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Registrar",
                           style: TextStyle(
@@ -174,13 +174,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
 
                 //Registro
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Tengo una cuenta",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -188,7 +188,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     GestureDetector(
                       onTap: widget.showLoginPage,
-                      child: Text(
+                      child: const Text(
                         " Iniciar Sesión",
                         style: TextStyle(
                           color: Colors.blue,

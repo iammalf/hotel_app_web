@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           Column(
             children: [
               Row(
-                children: [
+                children: const [
                   Icon(
                     Icons.place_outlined,
                     color: labelColor,
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               )
             ],
           ),
-          Spacer(),
+          const Spacer(),
           NotificationBox(
             notifiedNumber: 1,
             onTap: () {},
@@ -81,8 +81,8 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(15, 0, 15, 5),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(15, 0, 15, 5),
               child: Text(
                 "Encuentra y Reserva",
                 style: TextStyle(
@@ -91,8 +91,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(15, 0, 15, 10),
               child: Text(
                 "Inka Siza Hotel",
                 style: TextStyle(
@@ -103,11 +103,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             getCities(),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(15, 0, 15, 10),
               child: Text(
                 "Habitaciones",
                 style: TextStyle(
@@ -118,14 +118,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             getFeature(),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(15, 0, 15, 10),
+              margin: const EdgeInsets.fromLTRB(15, 0, 15, 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     "Recomendados",
                     style: TextStyle(
@@ -173,7 +173,7 @@ class _HomePageState extends State<HomePage> {
 
   getRecommend() {
     return SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(15, 5, 0, 5),
+      padding: const EdgeInsets.fromLTRB(15, 5, 0, 5),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(
@@ -192,7 +192,7 @@ class _HomePageState extends State<HomePage> {
 
   getCities() {
     return SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(15, 5, 0, 10),
+      padding: const EdgeInsets.fromLTRB(15, 5, 0, 10),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(

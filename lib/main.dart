@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_app_web/screens/login_page.dart';
 import 'package:hotel_app_web/screens/main_page.dart';
-import 'screens/root_app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
-import 'theme/color.dart';
 
 void main() async {
 // ...

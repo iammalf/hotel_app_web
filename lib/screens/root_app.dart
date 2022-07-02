@@ -19,25 +19,25 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   List barItems = [
     {
       "icon": "assets/icons/home.svg",
-      "page": HomePage(),
+      "page": const HomePage(),
     },
     {
       "icon": "assets/icons/search.svg",
       "page": Container(
         alignment: Alignment.center,
-        child: Text("Explorar"),
+        child: const Text("Explorar"),
       ),
     },
     {
       "icon": "assets/icons/pin-area.svg",
       "page": Container(
         alignment: Alignment.center,
-        child: Text("Falta Información"),
+        child: const Text("Falta Información"),
       ),
     },
     {
       "icon": "assets/icons/setting.svg",
-      "page": SettingPage(),
+      "page": const SettingPage(),
     },
   ];
 
@@ -100,14 +100,14 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       width: double.infinity,
       decoration: BoxDecoration(
           color: bottomBarColor,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(25), topRight: Radius.circular(25)),
           boxShadow: [
             BoxShadow(
                 color: shadowColor.withOpacity(0.1),
                 blurRadius: 1,
                 spreadRadius: 1,
-                offset: Offset(0, 1))
+                offset: const Offset(0, 1))
           ]),
       child: Padding(
         padding: const EdgeInsets.only(
