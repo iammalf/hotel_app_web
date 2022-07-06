@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -14,22 +15,47 @@ class _RegisterPageState extends State<RegisterPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  final _nameController = TextEditingController();
+  final _lastNameController = TextEditingController();
+  final _avatarController = TextEditingController();
 
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
-    super.dispose();
     _confirmPasswordController.dispose();
+    _nameController.dispose();
+    _lastNameController.dispose();
+    _avatarController.dispose();
+    super.dispose();
   }
 
   Future signUp() async {
     if (passwordConfirmed()) {
+      //TODO: CREATE USER
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
+
+      //TODO: ADD USERS DETAILS
+      addUserDetails(
+        _nameController.text.trim(),
+        _lastNameController.text.trim(),
+        _emailController.text.trim(),
+        _avatarController.text.trim(),
+      );
     }
+  }
+
+  Future addUserDetails(
+      String name, String lastName, String email, String avatar) async {
+    await FirebaseFirestore.instance.collection('users').add({
+      'name': name,
+      'lastName': lastName,
+      'email': email,
+      'avatar': avatar,
+    });
   }
 
   bool passwordConfirmed() {
@@ -68,6 +94,58 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
 
                 const SizedBox(height: 50),
+
+                //Name TextField
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: TextField(
+                        controller: _nameController,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Nombres",
+                          fillColor: Colors.grey[200],
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+
+                //LastName TextField
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: TextField(
+                        controller: _lastNameController,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Apellidos",
+                          fillColor: Colors.grey[200],
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 10),
 
                 //Email TextField
                 Padding(
@@ -139,6 +217,32 @@ class _RegisterPageState extends State<RegisterPage> {
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Confirmar Password",
+                          fillColor: Colors.grey[200],
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+
+                //Avatar Password TextField
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: TextField(
+                        controller: _avatarController,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Avatar Link",
                           fillColor: Colors.grey[200],
                           filled: true,
                         ),

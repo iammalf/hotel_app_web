@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'forgot_pass_page.dart';
+
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
   const LoginPage({Key? key, required this.showRegisterPage}) : super(key: key);
@@ -15,10 +17,19 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future signIn() async {
+    //TODO: LOADING CIRCLE
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(child: CircularProgressIndicator());
+      },
+    );
     await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: _emailController.text.trim(),
       password: _passwordController.text.trim(),
     );
+
+    Navigator.of(context).pop();
   }
 
   @override
@@ -107,7 +118,35 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const ForgotPasswordPage();
+                              },
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          "Olvidaste tu contraseña?",
+                          style: TextStyle(
+                              color: Colors.blue, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 20),
 
                 //Boton de Inicio de Sesión
                 Padding(
