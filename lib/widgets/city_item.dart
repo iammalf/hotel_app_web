@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hotel_app_web/theme/color.dart';
 
 class CityItem extends StatelessWidget {
-  CityItem({Key? key, required this.data, this.isSelected = false, this.onTap})
+  const CityItem(
+      {Key? key, required this.data, this.isSelected = false, this.onTap})
       : super(key: key);
   final data;
   final bool isSelected;

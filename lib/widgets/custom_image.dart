@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel_app_web/theme/color.dart';
 
 class CustomImage extends StatelessWidget {
-  CustomImage(this.image,
+  const CustomImage(this.image,
       {this.width = 100,
       this.height = 100,
       this.bgColor,

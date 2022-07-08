@@ -17,19 +17,32 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future signIn() async {
-    //TODO: LOADING CIRCLE
-    showDialog(
-      context: context,
-      builder: (context) {
-        return Center(child: CircularProgressIndicator());
-      },
-    );
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailController.text.trim(),
-      password: _passwordController.text.trim(),
-    );
+    try {
+      //TODO: LOADING CIRCLE
+      showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(child: CircularProgressIndicator());
+        },
+      );
 
-    Navigator.of(context).pop();
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+
+      Navigator.of(context).pop();
+    } on FirebaseException catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return const AlertDialog(
+            //TODO: CAMBIAR EL TEXTO DE ERROR
+            content: Text("El email no corresponde a un usuario registrado!"),
+          );
+        },
+      );
+    }
   }
 
   @override
